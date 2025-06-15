@@ -1,0 +1,124 @@
+\documentclass[12pt,usenames,dvipsnames]{article}
+\usepackage{graphicx}
+\usepackage{amsmath, amsthm, amssymb, tikz, enumerate, dsfont, mathabx, mathtools}
+\usepackage[english]{babel}
+\usepackage{tcolorbox}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{minted}
+\usepackage{stmaryrd}
+\usepackage{cancel}
+\usepackage{listings}
+\usepackage{mathrsfs}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{enumerate}
+\usepackage[version=3]{mhchem}
+\usepackage{float}
+\usepackage{color}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{csquotes}
+\usepackage{indentfirst}
+\usepackage{subcaption}
+\usepackage{subfiles}
+\usepackage{url}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage[sorting=none]{biblatex}
+\usepackage{cleveref}
+\bibliography{references} % Name of your .bib file (without extension)
+
+\usepackage{xcolor}   % Needed to define custom colors
+\usepackage{xltabular}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% Definindo a cor cinza claro
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{lightgray}{gray}{0.95}
+
+% Define custom colors for the style
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92} % Light grey background
+\definecolor{codegreen}{rgb}{0,0.6,0}         % Green for comments
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}      % Gray for line numbers
+\definecolor{codepurple}{rgb}{0.58,0,0.82}    % Purple for strings
+\definecolor{magenta}{rgb}{0.85, 0, 0.85}     % Magenta for keywords
+\definecolor{darkblue}{rgb}{0.1, 0.1, 0.6}        % Dark blue for keywords
+\definecolor{yellow}{rgb}{1, 1, 0.4}              % Yellow for functions
+\definecolor{codeblue}{rgb}{0.5, 0.8, 1}          % Light blue for variables
+\definecolor{lightgreen}{rgb}{0.6, 1, 0.6}        % Light green for numbers
+\definecolor{black}{rgb}{0.1, 0.1, 0.1}      % Black color
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+\definecolor{rowgray}{gray}{0.95}
+
+
+% Define Python style
+\lstdefinestyle{Pythonstyle}{
+    language=Matlab,                % programming language
+    backgroundcolor=\color{backcolour},   % background color
+    commentstyle=\color{codegreen},       % comment style
+    keywordstyle=\color{darkblue},         % keyword style
+    numberstyle=\tiny\color{codegray},    % the style used for the line-numbers
+    stringstyle=\color{codepurple},       % string literal style
+    emph={np},            % highlight function names
+    emphstyle=\color{darkblue},             % yellow for function names
+    basicstyle=\ttfamily\footnotesize,    % the size of the fonts used for the code
+    breakatwhitespace=false,              % sets if automatic breaks should only happen at whitespace
+    breaklines=true,                      % sets automatic line breaking
+    captionpos=b,                         % sets the caption-position to bottom
+    keepspaces=true,                      % keeps spaces in text
+    numbers=left,                         % where to put the line-numbers
+    numbersep=5pt,                        % how far the line-numbers are from the code
+    showspaces=false,                     % show spaces everywhere adding particular underscores
+    showstringspaces=false,               % underline spaces within strings only
+    showtabs=false,                       % show tabs within strings adding particular underscores
+    tabsize=2                             % sets default tabsize to 2 spaces
+}
+
+
+\newcommand{\PR}[1]
+{\ensuremath{\left[#1\right]}}
+\newcommand{\PC}[1]
+{\ensuremath{\left(#1\right)}}
+\newcommand{\chav}[1]
+{\ensuremath{\left\{#1\right\}}}
+\allowdisplaybreaks
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\cotg}{cotg}
+\graphicspath{{Figures/}}
+\addtolength{\textwidth}{1in}
+\addtolength{\textheight}{1in}
+\addtolength{\evensidemargin}{0.5in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\topmargin}{-0.5in}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definição}[subsection]
+\newtheorem{theorem}{Teorema}[subsection]
+\newtheorem{example}{Exemplo}[subsection]
+\newtheorem{prop}{Proposição}[subsection]
+\newtheorem{lem}{Lema}[subsection]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+
+
+
+\begin{document}
+\input{Capa}
+
+\input{Datasheet}
+\printbibliography
+
+
+\end{document}

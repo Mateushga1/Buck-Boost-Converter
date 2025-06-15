@@ -1,0 +1,16 @@
+LTspice 24.1.1 for Windows
+Circuit: C:\Users\Mateus\OneDrive\Documentos\8.Projet Portolan\Simulations\Polarity_Protection\Polarity_Protection.net
+Start Time: Mon Feb 24 23:00:04 2025
+solver = Normal
+Maximum thread count: 8
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.248 seconds.
+
+Files loaded:
+C:\Users\Mateus\OneDrive\Documentos\8.Projet Portolan\Simulations\Polarity_Protection\Polarity_Protection.net
+C:\Users\Mateus\AppData\Local\LTspice\lib\cmp\standard.dio
+C:\Users\Mateus\AppData\Local\LTspice\lib\cmp\standard.mos
+

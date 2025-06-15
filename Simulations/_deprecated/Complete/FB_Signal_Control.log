@@ -1,0 +1,344 @@
+Circuit: * C:\Users\Mateus\OneDrive\Documentos\8.Projet Portolan\Projet_2.0\Complete\FB_Signal_Control.asc
+
+Warning: Multiple definitions of model "2scr375p" Type: BJT
+Warning: Multiple definitions of model "bc857b" Type: BJT
+Warning: Multiple definitions of model "bc847c" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+c3: Increased Cpar to 1e-15
+Instance "m:u3:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u3:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u3:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u3:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u3:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u3:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u5:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u5:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u5:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u5:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u5:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u5:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u11:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u11:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u11:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u11:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u11:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u11:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u12:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u12:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u12:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u12:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u12:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u12:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u13:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u13:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u13:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u13:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u13:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u13:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u14:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u14:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u14:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u14:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u14:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u14:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u16:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u16:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u16:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u16:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u16:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u16:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u17:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u17:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u17:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u17:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u17:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u17:16": Length shorter than recommended for a level 1 MOSFET.
+Per .tran options, skipping operating point for transient analysis.
+Heightened Def Con from 1.00206e-09 to 2.25206e-09
+Heightened Def Con from 2.25206e-09 ++to 4.50206e-09
+Heightened Def Con from 4.52802e-09 to 6.65302e-09
+Heightened Def Con from 6.65302e-09 ++++++++++++++++++to 1.0778e-08
+Heightened Def Con from 1.0778e-08 +++++++++++++++++to 1.3778e-08
+Heightened Def Con from 1.3778e-08 +++++++++++++++++to 1.6778e-08
+Heightened Def Con from 1.6778e-08 ++++++++++++++++++to 1.7903e-08
+Heightened Def Con from 1.7903e-08 +++++++++++++++++to 1.80436e-08
+Heightened Def Con from 1.80436e-08 ++++++++++++++++++to 2.72936e-08
+Heightened Def Con from 2.72936e-08 ++++++++++++++++++to 3.02936e-08
+Heightened Def Con from 3.02936e-08 ++++++++++++++++++to 3.32936e-08
+Heightened Def Con from 3.32936e-08 ++++++++++++++++++to 3.62936e-08
+Heightened Def Con from 3.62936e-08 +++++++++++++++++++to 3.85436e-08
+Heightened Def Con from 3.85436e-08 +++++++++++++++++++to 3.95593e-08
+Heightened Def Con from 3.95593e-08 ++++++++++++++++++++to 4.25593e-08
+Heightened Def Con from 4.25593e-08 ++++++++++++++++++to 4.25749e-08
+Heightened Def Con from 4.25749e-08 ++++++++++++++++++to 4.28405e-08
+Heightened Def Con from 4.28405e-08 ++++++++++++++++++to 4.28561e-08
+Heightened Def Con from 4.28561e-08 ++++++++++++++++++++to 4.59811e-08
+Heightened Def Con from 4.59811e-08 ++++++++++++++++++++to 5.03561e-08
+Heightened Def Con from 5.03561e-08 +++++++++++++++++to 5.14811e-08
+Heightened Def Con from 5.14811e-08 +++++++++++++++++++to 5.16218e-08
+Heightened Def Con from 5.16218e-08 +++++++++++++++++++to 5.37468e-08
+Heightened Def Con from 5.37468e-08 ++++++++++++++++++++to 5.77468e-08
+Heightened Def Con from 5.77468e-08 ++++++++++++++++++++to 6.47468e-08
+Heightened Def Con from 6.47468e-08 +++++++++++++++++++to 6.57624e-08
+Heightened Def Con from 6.57624e-08 ++++++++++++++++++++to 6.5778e-08
+Heightened Def Con from 6.5778e-08 +++++++++++++++++++to 6.7028e-08
+Heightened Def Con from 6.7028e-08 ++++++++++++++++++++to 7.0028e-08
+Heightened Def Con from 7.0028e-08 +++++++++++++++++to 7.1153e-08
+Heightened Def Con from 7.1153e-08 +++++++++++++++++++to 7.2278e-08
+Heightened Def Con from 7.2278e-08 ++++++++++++++++++++to 7.45436e-08
+Heightened Def Con from 7.45436e-08 ++++++++++++++++++to 7.46843e-08
+Heightened Def Con from 7.46843e-08 ++++++++++++++++++++to 7.86999e-08
+Heightened Def Con from 7.86999e-08 ++++++++++++++++++to 7.88405e-08
+Heightened Def Con from 7.88405e-08 ++++++++++++++++++to 7.93405e-08
+Heightened Def Con from 7.93405e-08 ++++++++++++++++++++to 8.24655e-08
+Heightened Def Con from 8.24655e-08 ++++++++++++++++++to 8.28561e-08
+Heightened Def Con from 8.28561e-08 +++++++++++++++++to 8.31061e-08
+Heightened Def Con from 8.31061e-08 +++++++++++++++++to 8.31218e-08
+Heightened Def Con from 8.31218e-08 +++++++++++++++++++to 8.42468e-08
+Heightened Def Con from 8.42468e-08 +++++++++++++++++++to 8.44968e-08
+Heightened Def Con from 8.44968e-08 +++++++++++++++++++to 8.45124e-08
+Heightened Def Con from 8.45124e-08 +++++++++++++++++++to 8.5528e-08
+Heightened Def Con from 8.5528e-08 ++++++++++++++++++++to 8.8653e-08
+Heightened Def Con from 8.8653e-08 ++++++++++++++++++++to 9.2778e-08
+Heightened Def Con from 9.2778e-08 ++++++++++++++++++++to 9.5028e-08
+Heightened Def Con from 9.5028e-08 +++++++++++++++++to 9.50436e-08
+Heightened Def Con from 9.50436e-08 ++++++++++++++++++++to 9.75436e-08
+Heightened Def Con from 9.75436e-08 ++++++++++++++++++to 9.86686e-08
+Heightened Def Con from 9.86686e-08 +++++++++++++++++++++to 9.94186e-08
+Heightened Def Con from 9.94186e-08 ++++++++++++++++++++to 1.03669e-07
+Heightened Def Con from 1.03669e-07 ++++++++++++++++++to 1.04169e-07
+Heightened Def Con from 1.04169e-07 +++++++++++++++++to 1.04309e-07
+Heightened Def Con from 1.04309e-07 ++++++++++++++++++to 1.04325e-07
+Heightened Def Con from 1.04325e-07 ++++++++++++++++++to 1.04341e-07
+Heightened Def Con from 1.04341e-07 ++++++++++++++++++to 1.04356e-07
+Heightened Def Con from 1.04356e-07 ++++++++++++++++++++to 1.07606e-07
+Heightened Def Con from 1.07606e-07 +++++++++++++++++++to 1.08622e-07
+Heightened Def Con from 1.08622e-07 +++++++++++++++++to 1.08997e-07
+Heightened Def Con from 1.08997e-07 ++++++++++++++++++++to 1.12122e-07
+Heightened Def Con from 1.12122e-07 ++++++++++++++++++to 1.12622e-07
+Heightened Def Con from 1.12622e-07 ++++++++++++++++++to 1.12762e-07
+Heightened Def Con from 1.12762e-07 ++++++++++++++++++++to 1.15387e-07
+Heightened Def Con from 1.15387e-07 +++++++++++++++++to 1.15653e-07
+Heightened Def Con from 1.15653e-07 +++++++++++++++++++++to 1.22903e-07
+Heightened Def Con from 1.22903e-07 +++++++++++++++++to 1.24028e-07
+Heightened Def Con from 1.24028e-07 +++++++++++++++++to 1.24403e-07
+Heightened Def Con from 1.24403e-07 ++++++++++++++++++to 1.26528e-07
+Heightened Def Con from 1.26528e-07 ++++++++++++++++++to 1.27653e-07
+Heightened Def Con from 1.27653e-07 +++++++++++++++++++to 1.27794e-07
+Heightened Def Con from 1.27794e-07 ++++++++++++++++++++to 1.29919e-07
+Heightened Def Con from 1.29919e-07 ++++++++++++++++++to 1.30059e-07
+Heightened Def Con from 1.30059e-07 ++++++++++++++++++to 1.30075e-07
+Heightened Def Con from 1.30075e-07 ++++++++++++++++++++to 1.32091e-07
+Heightened Def Con from 1.32091e-07 ++++++++++++++++++to 1.32231e-07
+Heightened Def Con from 1.32231e-07 ++++++++++++++++++to 1.32247e-07
+Heightened Def Con from 1.32247e-07 +++++++++++++++++++++to 1.35497e-07
+Heightened Def Con from 1.35497e-07 +++++++++++++++++to 1.36622e-07
+Heightened Def Con from 1.36622e-07 ++++++++++++++++++to 1.37997e-07
+Heightened Def Con from 1.37997e-07 ++++++++++++++++++to 1.38012e-07
+Heightened Def Con from 1.38012e-07 ++++++++++++++++++to 1.38153e-07
+Heightened Def Con from 1.38153e-07 +++++++++++++++++++to 1.39169e-07
+Heightened Def Con from 1.39169e-07 +++++++++++++++++++++to 1.42294e-07
+Heightened Def Con from 1.42294e-07 +++++++++++++++++to 1.43419e-07
+Heightened Def Con from 1.43419e-07 +++++++++++++++++to 1.43794e-07
+Heightened Def Con from 1.43794e-07 ++++++++++++++++++to 1.44919e-07
+Heightened Def Con from 1.44919e-07 ++++++++++++++++++to 1.46044e-07
+Heightened Def Con from 1.46044e-07 ++++++++++++++++++to 1.48059e-07
+Heightened Def Con from 1.48059e-07 ++++++++++++++++++++to 1.50309e-07
+Heightened Def Con from 1.50309e-07 ++++++++++++++++++to 1.50325e-07
+Heightened Def Con from 1.50325e-07 +++++++++++++++++++++to 1.54575e-07
+Heightened Def Con from 1.54575e-07 +++++++++++++++++to 1.587e-07
+Heightened Def Con from 1.587e-07 +++++++++++++++++to 1.5895e-07
+Heightened Def Con from 1.5895e-07 ++++++++++++++++++to 1.58966e-07
+Heightened Def Con from 1.58966e-07 ++++++++++++++++++to 1.60091e-07
+Heightened Def Con from 1.60091e-07 +++++++++++++++++++to 1.60106e-07
+Heightened Def Con from 1.60106e-07 ++++++++++++++++++++to 1.61356e-07
+Heightened Def Con from 1.61356e-07 ++++++++++++++++++++to 1.61981e-07
+Heightened Def Con from 1.61981e-07 ++++++++++++++++++to 1.62247e-07
+Heightened Def Con from 1.62247e-07 ++++++++++++++++++++to 1.63622e-07
+Heightened Def Con from 1.63622e-07 ++++++++++++++++++to 1.63637e-07
+Heightened Def Con from 1.63637e-07 ++++++++++++++++++to 1.63653e-07
+Heightened Def Con from 1.63653e-07 +++++++++++++++++to 1.63669e-07
+Heightened Def Con from 1.63669e-07 ++++++++++++++++++to 1.63934e-07
+Heightened Def Con from 1.63934e-07 ++++++++++++++++++++to 1.6395e-07
+Heightened Def Con from 1.6395e-07 ++++++++++++++++++to 1.63966e-07
+Heightened Def Con from 1.63966e-07 ++++++++++++++++++++to 1.65106e-07
+Heightened Def Con from 1.65106e-07 ++++++++++++++++++++to 1.65372e-07
+Heightened Def Con from 1.65372e-07 ++++++++++++++++++to 1.65387e-07
+Heightened Def Con from 1.65387e-07 ++++++++++++++++++++to 1.65778e-07
+Heightened Def Con from 1.65778e-07 +++++++++++++++++++++to 1.69903e-07
+Heightened Def Con from 1.69903e-07 +++++++++++++++++to 1.71028e-07
+Heightened Def Con from 1.71028e-07 +++++++++++++++++++to 1.73403e-07
+Heightened Def Con from 1.73403e-07 +++++++++++++++++++to 1.74528e-07
+Heightened Def Con from 1.74528e-07 ++++++++++++++++++++to 1.76653e-07
+Heightened Def Con from 1.76653e-07 ++++++++++++++++++to 1.76669e-07
+Heightened Def Con from 1.76669e-07 +++++++++++++++++to 1.76684e-07
+Heightened Def Con from 1.76684e-07 ++++++++++++++++++to 1.767e-07
+Heightened Def Con from 1.767e-07 +++++++++++++++++++++to 1.78825e-07
+Heightened Def Con from 1.78825e-07 +++++++++++++++++++to 1.82841e-07
+Heightened Def Con from 1.82841e-07 +++++++++++++++++++to 1.82856e-07
+Heightened Def Con from 1.82856e-07 +++++++++++++++++++++to 1.88247e-07
+Heightened Def Con from 1.88247e-07 +++++++++++++++++to 1.89372e-07
+Heightened Def Con from 1.89372e-07 ++++++++++++++++++to 1.92622e-07
+Heightened Def Con from 1.92622e-07 ++++++++++++++++++++to 1.95747e-07
+Heightened Def Con from 1.95747e-07 +++++++++++++++++++++to 1.98372e-07
+Heightened Def Con from 1.98372e-07 ++++++++++++++++++to 1.99622e-07
+Heightened Def Con from 1.99622e-07 ++++++++++++++++++to 1.99762e-07
+Heightened Def Con from 1.99762e-07 ++++++++++++++++++to 2.01028e-07
+Heightened Def Con from 2.01028e-07 ++++++++++++++++++++to 2.02403e-07
+Heightened Def Con from 2.02403e-07 ++++++++++++++++++to 2.02419e-07
+Heightened Def Con from 2.02419e-07 ++++++++++++++++++to 2.02434e-07
+Heightened Def Con from 2.02434e-07 ++++++++++++++++++++to 2.027e-07
+Heightened Def Con from 2.027e-07 +++++++++++++++++++++to 2.067e-07
+Heightened Def Con from 2.067e-07 +++++++++++++++++++to 2.09825e-07
+Heightened Def Con from 2.09825e-07 +++++++++++++++++++++to 2.13091e-07
+Heightened Def Con from 2.13091e-07 +++++++++++++++++to 2.14216e-07
+Heightened Def Con from 2.14216e-07 ++++++++++++++++++to 2.14481e-07
+Heightened Def Con from 2.14481e-07 +++++++++++++++++to 2.14497e-07
+Heightened Def Con from 2.14497e-07 ++++++++++++++++++to 2.15622e-07
+Heightened Def Con from 2.15622e-07 +++++++++++++++++++to 2.16637e-07
+Heightened Def Con from 2.16637e-07 +++++++++++++++++++to 2.16653e-07
+Heightened Def Con from 2.16653e-07 ++++++++++++++++++++to 2.17778e-07
+Heightened Def Con from 2.17778e-07 ++++++++++++++++++++to 2.20153e-07
+Heightened Def Con from 2.20153e-07 ++++++++++++++++++to 2.20419e-07
+Heightened Def Con from 2.20419e-07 +++++++++++++++++++to 2.21044e-07
+Heightened Def Con from 2.21044e-07 ++++++++++++++++++++to 2.21216e-07
+Heightened Def Con from 2.21216e-07 ++++++++++++++++++++to 2.22481e-07
+Heightened Def Con from 2.22481e-07 +++++++++++++++++++to 2.23856e-07
+Heightened Def Con from 2.23856e-07 ++++++++++++++++++++to 2.25872e-07
+Heightened Def Con from 2.25872e-07 ++++++++++++++++++++to 2.26262e-07
+Heightened Def Con from 2.26262e-07 +++++++++++++++++++to 2.27528e-07
+Heightened Def Con from 2.27528e-07 ++++++++++++++++++++to 2.29778e-07
+Heightened Def Con from 2.29778e-07 ++++++++++++++++++to 2.30278e-07
+Heightened Def Con from 2.30278e-07 ++++++++++++++++++to 2.30294e-07
+Heightened Def Con from 2.30294e-07 ++++++++++++++++++++to 2.33669e-07
+Heightened Def Con from 2.33669e-07 ++++++++++++++++++to 2.33809e-07
+Heightened Def Con from 2.33809e-07 ++++++++++++++++++to 2.33825e-07
+Heightened Def Con from 2.33825e-07 ++++++++++++++++++++to 2.3795e-07
+Heightened Def Con from 2.3795e-07 +++++++++++++++++++to 2.38216e-07
+Heightened Def Con from 2.38216e-07 ++++++++++++++++++to 2.38231e-07
+Heightened Def Con from 2.38231e-07 +++++++++++++++++++++to 2.41497e-07
+Heightened Def Con from 2.41497e-07 +++++++++++++++++to 2.42622e-07
+Heightened Def Con from 2.42622e-07 ++++++++++++++++++to 2.43997e-07
+Heightened Def Con from 2.43997e-07 +++++++++++++++++++to 2.44012e-07
+Heightened Def Con from 2.44012e-07 ++++++++++++++++++++to 2.46387e-07
+Heightened Def Con from 2.46387e-07 +++++++++++++++++++++to 2.51512e-07
+Heightened Def Con from 2.51512e-07 +++++++++++++++++to 2.52887e-07
+Heightened Def Con from 2.52887e-07 +++++++++++++++++++to 2.53903e-07
+Heightened Def Con from 2.53903e-07 +++++++++++++++++++to 2.53919e-07
+Heightened Def Con from 2.53919e-07 +++++++++++++++++++++to 2.58044e-07
+Heightened Def Con from 2.58044e-07 ++++++++++++++++++++to 2.61544e-07
+Heightened Def Con from 2.61544e-07 ++++++++++++++++++to 2.61559e-07
+Heightened Def Con from 2.61559e-07 ++++++++++++++++++to 2.617e-07
+Heightened Def Con from 2.617e-07 +++++++++++++++++++++to 2.66716e-07
+Heightened Def Con from 2.66716e-07 +++++++++++++++++to 2.67841e-07
+Heightened Def Con from 2.67841e-07 ++++++++++++++++++to 2.68106e-07
+Heightened Def Con from 2.68106e-07 ++++++++++++++++++to 2.69247e-07
+Heightened Def Con from 2.69247e-07 ++++++++++++++++++++to 2.71497e-07
+Heightened Def Con from 2.71497e-07 ++++++++++++++++++to 2.71997e-07
+Heightened Def Con from 2.71997e-07 +++++++++++++++++to 2.72247e-07
+Heightened Def Con from 2.72247e-07 ++++++++++++++++++++to 2.72637e-07
+Heightened Def Con from 2.72637e-07 ++++++++++++++++++++to 2.74012e-07
+Heightened Def Con from 2.74012e-07 ++++++++++++++++++++to 2.75262e-07
+Heightened Def Con from 2.75262e-07 ++++++++++++++++++++to 2.79387e-07
+Heightened Def Con from 2.79387e-07 +++++++++++++++++to 2.79528e-07
+Heightened Def Con from 2.79528e-07 +++++++++++++++++to 2.79903e-07
+Heightened Def Con from 2.79903e-07 ++++++++++++++++++to 2.80044e-07
+Heightened Def Con from 2.80044e-07 +++++++++++++++++++++to 2.82294e-07
+Heightened Def Con from 2.82294e-07 +++++++++++++++++to 2.83434e-07
+Heightened Def Con from 2.83434e-07 +++++++++++++++++to 2.8345e-07
+Heightened Def Con from 2.8345e-07 +++++++++++++++++to 2.837e-07
+Heightened Def Con from 2.837e-07 ++++++++++++++++++++++to 2.91091e-07
+Heightened Def Con from 2.91091e-07 +++++++++++++++++to 2.92216e-07
+Heightened Def Con from 2.92216e-07 ++++++++++++++++++to 2.92716e-07
+Heightened Def Con from 2.92716e-07 ++++++++++++++++++to 2.94841e-07
+Heightened Def Con from 2.94841e-07 ++++++++++++++++++++to 2.99841e-07
+Heightened Def Con from 2.99841e-07 ++++++++++++++++++to 3.00341e-07
+Heightened Def Con from 3.00341e-07 +++++++++++++++++to 3.00481e-07
+Heightened Def Con from 3.00481e-07 +++++++++++++++++to 3.00731e-07
+Heightened Def Con from 3.00731e-07 ++++++++++++++++++++to 3.00747e-07
+Heightened Def Con from 3.00747e-07 ++++++++++++++++++++to 3.00762e-07
+Heightened Def Con from 3.00762e-07 ++++++++++++++++++++to 3.01387e-07
+Heightened Def Con from 3.01387e-07 ++++++++++++++++++++to 3.01637e-07
+Heightened Def Con from 3.01637e-07 +++++++++++++++++++++to 3.03762e-07
+Heightened Def Con from 3.03762e-07 +++++++++++++++++to 3.04887e-07
+Heightened Def Con from 3.04887e-07 +++++++++++++++++to 3.05137e-07
+Heightened Def Con from 3.05137e-07 ++++++++++++++++++to 3.05278e-07
+Heightened Def Con from 3.05278e-07 +++++++++++++++++++to 3.05544e-07
+Heightened Def Con from 3.05544e-07 +++++++++++++++++++to 3.05559e-07
+Heightened Def Con from 3.05559e-07 ++++++++++++++++++++to 3.07809e-07
+Heightened Def Con from 3.07809e-07 +++++++++++++++++to 3.08309e-07
+Heightened Def Con from 3.08309e-07 +++++++++++++++++++to 3.0845e-07
+Heightened Def Con from 3.0845e-07 ++++++++++++++++++++to 3.08466e-07
+Heightened Def Con from 3.08466e-07 ++++++++++++++++++++to 3.09591e-07
+Heightened Def Con from 3.09591e-07 ++++++++++++++++++++to 3.13716e-07
+Heightened Def Con from 3.13716e-07 +++++++++++++++++++++to 3.16981e-07
+Heightened Def Con from 3.16981e-07 +++++++++++++++++to 3.18106e-07
+Heightened Def Con from 3.18106e-07 ++++++++++++++++++++to 3.19497e-07
+Heightened Def Con from 3.19497e-07 ++++++++++++++++++++to 3.20622e-07
+Heightened Def Con from 3.20622e-07 ++++++++++++++++++to 3.20637e-07
+Heightened Def Con from 3.20637e-07 ++++++++++++++++++++to 3.23762e-07
+Heightened Def Con from 3.23762e-07 ++++++++++++++++++to 3.23903e-07
+Heightened Def Con from 3.23903e-07 ++++++++++++++++++to 3.24169e-07
+Heightened Def Con from 3.24169e-07 ++++++++++++++++++++to 3.25544e-07
+Heightened Def Con from 3.25544e-07 ++++++++++++++++++++to 3.26669e-07
+Heightened Def Con from 3.26669e-07 +++++++++++++++++++++to 3.27919e-07
+Heightened Def Con from 3.27919e-07 +++++++++++++++++to 3.29044e-07
+Heightened Def Con from 3.29044e-07 ++++++++++++++++++to 3.29184e-07
+Heightened Def Con from 3.29184e-07 +++++++++++++++++++to 3.29325e-07
+Heightened Def Con from 3.29325e-07 +++++++++++++++++++++to 3.32575e-07
+Heightened Def Con from 3.32575e-07 +++++++++++++++++to 3.33716e-07
+Heightened Def Con from 3.33716e-07 ++++++++++++++++++to 3.33856e-07
+Heightened Def Con from 3.33856e-07 +++++++++++++++++++to 3.34122e-07
+Heightened Def Con from 3.34122e-07 ++++++++++++++++++++to 3.36372e-07
+Heightened Def Con from 3.36372e-07 +++++++++++++++++++++to 3.39497e-07
+Heightened Def Con from 3.39497e-07 +++++++++++++++++to 3.40622e-07
+Heightened Def Con from 3.40622e-07 +++++++++++++++++to 3.40637e-07
+Heightened Def Con from 3.40637e-07 +++++++++++++++++++to 3.41028e-07
+Heightened Def Con from 3.41028e-07 ++++++++++++++++++++to 3.42278e-07
+Heightened Def Con from 3.42278e-07 ++++++++++++++++++to 3.42778e-07
+Heightened Def Con from 3.42778e-07 ++++++++++++++++++++to 3.44903e-07
+Heightened Def Con from 3.44903e-07 +++++++++++++++++++++to 3.47278e-07
+Heightened Def Con from 3.47278e-07 +++++++++++++++++to 3.48403e-07
+Heightened Def Con from 3.48403e-07 +++++++++++++++++to 3.48778e-07
+Heightened Def Con from 3.48778e-07 +++++++++++++++++++to 3.48794e-07
+Heightened Def Con from 3.48794e-07 ++++++++++++++++++++to 3.52044e-07
+Heightened Def Con from 3.52044e-07 +++++++++++++++++to 3.53169e-07
+Heightened Def Con from 3.53169e-07 ++++++++++++++++++++++to 3.62169e-07
+Heightened Def Con from 3.62184e-07 +++++to 3.63184e-07
+
+Date: Fri Nov  1 00:06:55 2024
+Total elapsed time: 31.196 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 599483
+traniter = 599483
+tranpoints = 54897
+accept = 5681
+rejected = 54115
+matrix size = 634
+fillins = 1013
+solver = Normal
+Avg thread counts: 1.0/2.7/4.4/1.0
+Matrix Compiler1: 119.08 KB object code size  23.8/13.4/[5.9]
+Matrix Compiler2: 77.71 KB object code size  9.2/9.8/[4.0]
+

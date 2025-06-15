@@ -1,0 +1,40 @@
+Circuit: * C:\Users\Mateus\OneDrive\Documentos\8.Projet Portolan\Buck_Boost_LT8390_ModeBuck.asc
+
+Warning: Multiple definitions of model "2scr375p" Type: BJT
+Warning: Multiple definitions of model "bc857b" Type: BJT
+Warning: Multiple definitions of model "bc847c" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+c17: Increased Cpar to 1e-09
+c8: Increased Cpar to 1e-09
+c15: Increased Cpar to 1e-09
+c16: Increased Cpar to 1e-09
+Per .tran options, skipping operating point for transient analysis.
+Changing Tseed to 3.51563e-09
+Changing Tseed to 3.51562e-11
+Heightened Def Con from 0.012385 to 0.012385
+Heightened Def Con from 0.0138065 to 0.0138065
+Heightened Def Con from 0.0167678 to 0.0167678
+Heightened Def Con from 0.0174553 to 0.0174553
+Heightened Def Con from 0.023791 to 0.023791
+Heightened Def Con from 0.026681 to 0.026681
+Heightened Def Con from 0.0278912 to 0.0278912
+Heightened Def Con from 0.0336656 to 0.0336656
+
+Date: Tue Oct 29 19:59:29 2024
+Total elapsed time: 3576.587 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 37097741
+traniter = 37097741
+tranpoints = 9962841
+accept = 7278718
+rejected = 2684129
+matrix size = 412
+fillins = 162
+solver = Normal
+Avg thread counts: 4.0/4.0/1.0/1.0
+Matrix Compiler1: 23.87 KB object code size  6.4/4.4/[3.4]
+Matrix Compiler2: 28.73 KB object code size  4.3/6.1/[1.9]
+

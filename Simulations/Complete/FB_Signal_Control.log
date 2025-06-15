@@ -1,0 +1,68 @@
+Circuit: * C:\Users\Mateus\OneDrive\Documentos\8.Projet Portolan\Projet_2.0\Complete\FB_Signal_Control.asc
+
+Warning: Multiple definitions of model "2scr375p" Type: BJT
+Warning: Multiple definitions of model "bc857b" Type: BJT
+Warning: Multiple definitions of model "bc847c" Type: BJT
+Warning: Multiple definitions of model "bc847b" Type: BJT
+WARNING: Less than two connections to node nc_01.  This node is used by v6.
+Instance "m:u2:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u2:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u4:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u6:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u6:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u6:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u6:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u6:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u6:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u7:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u9:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u9:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u9:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u9:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u9:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u9:16": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:2": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:4": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:15": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:u10:16": Length shorter than recommended for a level 1 MOSFET.
+Per .tran options, skipping operating point for transient analysis.
+Changing Tseed to 1e-08
+Changing Tseed to 1e-10
+Changing Tseed to 1e-07
+Changing Tseed to 1e-11
+Heightened Def Con from 0.0375474 to 0.0375474
+
+Date: Thu Nov 14 21:41:30 2024
+Total elapsed time: 37.823 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 756485
+traniter = 756485
+tranpoints = 224231
+accept = 167673
+rejected = 56555
+matrix size = 399
+fillins = 327
+solver = Normal
+Avg thread counts: 1.0/1.0/1.0/1.0
+Matrix Compiler1: 45.28 KB object code size  8.0/4.9/[2.0]
+Matrix Compiler2: 40.75 KB object code size  4.0/4.8/[2.1]
+

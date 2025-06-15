@@ -1,0 +1,64 @@
+\begin{titlepage}
+	\noindent\rule{\textwidth}{1pt}
+    \noindent
+    \begin{minipage}[t]{0.48\textwidth}
+      \textbf{LT8390}
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{0.48\textwidth}
+      \raggedleft
+      \textbf{Régulateur sélectionnable Buck-Boost} \\
+	  \textbf{à commande opto-isolée}
+    \end{minipage}\\[0.5em]
+
+    \vspace{1cm}
+
+    \noindent
+    \begin{minipage}[t]{0.48\textwidth}
+	\textbf{Description Générale}
+
+	\vspace{0.5cm}
+
+	Ce projet présente la conception et la réalisation d'une carte convertisseur DC-DC compacte et haute performance, basée sur le contrôleur synchrone à 4 interrupteurs LT8390 de Linear Technology. La carte accepte une large plage de tensions d'entrée (8 V-56 V) et fournit une sortie réglable de 0 V à 56 V en mode Buck-Boost (ou jusqu'à Vin en mode Buck), avec contrôle de courant cycle-par-cycle jusqu'à 30 A en entrée et rendements de crête supérieurs à 93 %.
+
+	\vspace{0.3cm}
+
+	Les blocs fonctionnels clés comprennent : une étage Buck-Boost intégré, une protection contre l'inversion de polarité à base de MOSFET, un convertisseur auxiliaire Fly-Buck (LM5160A) fournissant des rails 5 V isolés et non isolés, une interface de contrôle externe galvanique isolée (0-5 V ou 4-20 mA) basée sur l'optocoupleur HCNR200, et un réseau programmable de sélection de mode et d'injection de rétroaction (utilisant un PWM LTC6992 pour l'échelle Buck).
+
+	\vspace{0.3cm}
+
+	Le cycle complet de développement a été réalisé : définition de la topologie et dimensionnement des composants selon les datasheets, modélisation LTspice, implantation du PCB sous Altium sur quatre couches, et validation en banc des étages de puissance et des boucles de contrôle.
+
+	\end{minipage}%
+	\hfill%
+	\begin{minipage}[t]{0.48\textwidth}
+	\textbf{Avantages et Caractéristiques}
+
+	\begin{itemize}[leftmargin=0pt,labelsep=5pt]
+		\item Plage de tension d'entrée étendue (8V-56V)
+		\item Topologie synchrone 4 interrupteurs LT8390
+		\item Rendement $>$ 93\%
+		\item Protection contre inversion de polarité par MOSFET avec indication LED visuelle
+		\item Convertisseur auxiliaire Fly-Buck fournissant des rails 5 V isolés et non isolés
+		\item Contrôle externe galvanique isolé via optocoupleur haute linéarité
+		\item Interface de commande externe sélectionnable (0-5 V ou 4-20 mA)
+		\item Sélection dynamique du mode entre Buck-Boost (0 V-56 V en sortie) et Buck (0 V-Vin en sortie)
+		\item Limitation de courant cycle-par-cycle (résistance de détection 1,6 m$\Omega$), UVLO ($>$ 8 V) et démarrage progressif pour protection robuste
+		\item Modulation de fréquence à spectre étalé pour réduire les EMI
+		\item PCB compact 2 couches à haute densité de composants, implantation optimisée pour dissipation thermique et intégrité des signaux
+	\end{itemize}
+	\end{minipage}
+
+
+    \vfill
+
+    \noindent
+    \begin{minipage}[t]{0.48\textwidth}
+      \footnotesize Révision 1 - Juin 2025 \\
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[t]{0.48\textwidth}
+      \raggedleft
+    \end{minipage}\\[0.5em]
+
+\end{titlepage}

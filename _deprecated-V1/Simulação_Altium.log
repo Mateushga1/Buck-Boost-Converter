@@ -1,0 +1,31 @@
+Circuit: * C:\Users\Mateus\OneDrive\Documentos\8.Projet Portolan\Simulação_Altium.asc
+
+c9: Increased Cpar to 1e-11
+c8: Increased Cpar to 1e-11
+c10: Increased Cpar to 1e-11
+c11: Increased Cpar to 1e-11
+c12: Increased Cpar to 1e-11
+c13: Increased Cpar to 1e-11
+c14: Increased Cpar to 1e-11
+c15: Increased Cpar to 1e-11
+Per .tran options, skipping operating point for transient analysis.
+Heightened Def Con from 0.0601903 to 0.0601903
+
+Date: Tue Oct 29 18:51:09 2024
+Total elapsed time: 1518.339 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 30174608
+traniter = 30174608
+tranpoints = 7912725
+accept = 5943813
+rejected = 1968913
+matrix size = 317
+fillins = 63
+solver = Normal
+Avg thread counts: 1.0/4.0/1.0/1.0
+Matrix Compiler1: 13.50 KB object code size  4.1/3.0/[1.3]
+Matrix Compiler2: 18.04 KB object code size  3.1/5.4/[1.5]
+

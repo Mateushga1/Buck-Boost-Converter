@@ -1,0 +1,462 @@
+// Creates a div on the calling page to show ECAD model content.
+function loadPartDiv(manufacturer,partNumber,branding,fadeBackground,format,testing,logo, lang, exactPnMatch, datasheetURL,o3,exactMnMatch) {
+	window.history.pushState('MultiView First Shown','MultiView');
+
+	if (o3 === undefined) o3 = '';
+	if (branding == 'onsemi') o3=0;
+	o3Clause='&o3='+o3;
+
+	// Default values
+	if (datasheetURL === undefined) datasheetURL = '';
+
+	if (branding === undefined || branding === null || branding === 'native' || branding==='') {
+		// branding = '';
+		branding = 'g.';//default as g 
+		// partnerClause = '&pna=native';
+		partnerClause = '&pna='+branding;//default as g
+		partnerName = '';
+	}
+	else if (branding == 'mouser' ) {
+		// Mouser wanted their site prefix changed. They are now a system exception in that their partner name and site prefix are different. 
+		partnerName = 'Mouser';
+		branding = 'ms.';
+		partnerClause = '&pna=mouser';
+		format = 'zip';
+	}
+
+	else {
+		partnerClause = '&pna='+branding;
+		partnerName = branding;
+		branding = branding + '.';
+	}
+	// Microchip want sandboxing on multiview. Experimental at this point so only enabled for them and the dormant oemsecrets domain for internal testing
+	var mvSandbox = (branding == 'microchip.' || branding == 'oemsecrets.') ? 1 : 0;
+    console.log(branding);
+	//if (!(format === 'epw' || format === 'zip') || branding == 'ms.') format = 'zip';
+    if (!(format === 'epw' || format === 'zip')) format = 'zip';
+	if (fadeBackground === undefined) fadeBackground = 1;
+	if (testing === undefined) testing = 0; 
+	if (exactPnMatch === undefined) pnMatchClause = '';
+	else pnMatchClause = '&epm='+(parseInt(exactPnMatch));
+	if (exactMnMatch === undefined) mnMatchClause = '';
+	else mnMatchClause = '&emm='+(parseInt(exactMnMatch));
+
+	var showComboArea = (manufacturer.toLowerCase().indexOf('renesas')>=0)  ? 1 : 0;
+	console.log('manufacturer is ',manufacturer,'partnerName',partnerName,'showComboArea is', showComboArea);
+
+	var validLanguages = ['en-GB','en-US','cs-CZ','es-ES','es-MX','fr-FR','de-DE','it-IT','ja-JP','ko-KR','nl-NL','pt','ru-RU','sv-SE','th-TH','zh-CHS','zh-CHT','pl-PL','fil-PH','vi-VN'];
+
+
+
+	if (lang !== undefined) {
+		if (!in_array(lang,validLanguages)) lang='en-GB';
+		langClause = '&lang='+lang;
+	}
+	else {
+		lang='en-GB';
+		langClause = '';
+	}
+
+
+	// logos for demos.
+	if (logo === undefined) logoClause = '';
+	else logoClause = '&logo='+encodeURI(logo);
+
+	// Is one of our divs already in existance? If it is update that rather than creating another. 
+	var mvActiveArea = document.getElementById('mvActiveArea');
+	if (mvActiveArea === null) {
+		// no existing div, create something suitable. 
+
+		// This div creates the optional dimming of the host web page and catches clicks directed to the host web page to remove our embedded document. 
+		var mvBackdrop = document.createElement('div');
+		mvBackdrop.id = 'mvBackdrop';
+		mvBackdrop.style.position='fixed';
+		mvBackdrop.style.display='block';
+		mvBackdrop.style.zIndex=999999;
+		mvBackdrop.style.left = '0px';
+		mvBackdrop.style.top = '0px';
+		if(fadeBackground) mvBackdrop.style.backgroundColor = 'rgba(51, 51, 51, 0.25)';
+		else mvBackdrop.style.backgroundColor = '#FFFFFF00';
+		mvBackdrop.style.left = '0px';
+		mvBackdrop.style.top = '0px';
+		mvBackdrop.style.width = '100%';
+		mvBackdrop.style.height = '100%';
+		mvBackdrop.style.textAlign = 'center';
+		mvBackdrop.onclick = closeMultiViewDiv;
+        window.addEventListener("resize", backdropResized);
+
+		// This is our embedded outer div, lives on the host page. It has to be on the page site so the close box can delete our embedded doc (and its self)
+		// from the host page when the user is finished with us. We aim to leave the host page exactly as we found it. 
+		var mvOverlayDiv = document.createElement('div');
+		mvOverlayDiv.showComboArea = showComboArea;	// store decision to show combo area in the mvOverlayDiv object so it can be used in later size calculations
+		mvOverlayDiv.id = 'mvOverlayDiv';
+		mvOverlayDiv.style.position='relative';
+		mvOverlayDiv.style.display='inline-block';
+		mvOverlayDiv.style.backgroundColor = 'white';
+		mvOverlayDiv.style.paddingLeft='1px';
+		mvOverlayDiv.style.paddingRight='1px';
+
+        mvOverlayDiv.style.top = '4%';
+        mvOverlayDiv.style.margin = '0px auto';
+        mvOverlayDiv.onclick = mvNoAction;
+		mvOverlayDiv.className ='mvPopout';
+		//Commented by Ron
+		// mvOverlayDiv.style.border = '1px solid #595959';
+		mvOverlayDiv.style.boxShadow = '5px 5px 3px lightgrey';
+		mvBackdrop.appendChild(mvOverlayDiv);
+
+		// Ron Adding font api
+		 var link = document.createElement('link');
+		 link.setAttribute('rel', 'stylesheet');
+		 link.setAttribute('type', 'text/css');
+		 // the font weight @600 at the link 
+		 link.setAttribute('href', 'https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&display=swap');
+		 document.head.appendChild(link);
+
+		// Ron Adding font locally
+		// var link = document.createElement('link');
+		// link.setAttribute('rel', 'stylesheet');
+		// link.setAttribute('type', 'text/css');
+		// link.setAttribute('href', 'https://'+branding+'componentsearchengine.com/common/css/stylesNewDesign.css');
+		// document.head.appendChild(link);
+	
+
+		// add a div for the title bar
+		var mvTitleBar = document.createElement('div');
+		mvTitleBar.style.fontFamily='Source Code Pro';
+		mvTitleBar.style.fontWeight='600';
+		mvTitleBar.style.padding = '10px';
+		// mvTitleBar.style.borderBottom='0px solid lightgrey';
+		mvTitleBar.style.height='40px';
+		mvTitleBar.style.width='100%';
+		mvTitleBar.style.boxSizing='border-box';
+        mvTitleBar.id = 'mvTitleBar';
+		// Ron
+		mvTitleBar.style.background= 'url(https://'+branding+'componentsearchengine.com/graphics/mvTitleBarBanner.svg)';
+		mvTitleBar.style.filter= 'grayscale(1)  invert(0) brightness(1) drop-shadow(0 0 var(--themeColour)) opacity(1)';
+		mvOverlayDiv.appendChild(mvTitleBar);
+
+
+
+ 		// The tite bar text
+		var mvTitleText = document.createElement('div');
+		tx = {
+			'en-GB' : 'Symbols | Footprints | 3D Models',
+			'en-US' : 'Symbols | Footprints | 3D Models',
+			'cs-CZ' : 'Symbol | RozmÄ›ry | Modely 3D',
+			'es-ES' : 'SÃ­mbolo | TamaÃ±o | Modelos 3D',
+			'es-MX' : 'SÃ­mbolo | TamaÃ±o | Modelos 3D',
+			'fr-FR' : 'Symbole | Encombrement | ModÃ¨les 3D',
+			'de-DE' : 'Symbol | Footprint | 3D-Modelle',
+			'it-IT' : 'Simbolo | Ingombro | Modelli 3D',
+			//'ja-JP' : 'ã‚·ãƒ³ãƒœãƒ«| ãƒ•ãƒƒãƒˆãƒ—ãƒªãƒ³ãƒˆ | 3D ãƒ¢ãƒ‡ãƒ«',
+			'ja-JP' : decodeURIComponent('%E3%82%B7%E3%83%B3%E3%83%9C%E3%83%AB%7C%20%E3%83%95%E3%83%83%E3%83%88%E3%83%97%E3%83%AA%E3%83%B3%E3%83%88%20%7C%203D%20%E3%83%A2%E3%83%87%E3%83%AB'),
+			//'ko-KR' : 'ê¸°í˜¸ | ì„¤ì¹˜ ê³µê°„ | 3D ëª¨ë¸',
+			'ko-KR' : decodeURIComponent('%EA%B8%B0%ED%98%B8%20%7C%20%EC%84%A4%EC%B9%98%20%EA%B3%B5%EA%B0%84%20%7C%203D%20%EB%AA%A8%EB%8D%B8'),
+			'nl-NL' : 'Symbool | Voetafdruk | 3D-modellen',
+			'pt'    : 'SÃ­mbolo | DimensÃµes | Modelos 3D',
+			//'ru-RU' : 'ÐžÐ±Ð¾Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ | Ð Ð°Ð·Ð¼ÐµÑ€ | Ð¼Ð¾Ð´ÐµÐ»Ð¸ 3D',
+			'ru-RU' : decodeURIComponent('%D0%9E%D0%B1%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%7C%20%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%20%7C%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8%203D'),
+			'sv-SE' : 'Symbol | Format | 3D-modeller',
+			//'th-TH' : 'à¸ªà¸±à¸à¸¥à¸±à¸à¸©à¸“à¹Œ| à¸«à¸¥à¸±à¸à¹€à¸à¸“à¸‘à¹Œ | à¹‚à¸¡à¹€à¸”à¸¥ 3D',
+			'th-TH': decodeURIComponent('%E0%B8%AA%E0%B8%B1%E0%B8%8D%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%93%E0%B9%8C%7C%20%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%81%E0%B8%93%E0%B8%91%E0%B9%8C%20%7C%20%E0%B9%82%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B8%A5%203D'),
+			//'zh-CHS': 'å…ƒä»¶ç¬¦å· | PCB å°è£…å›¾ | 3Dæ¨¡åž‹',
+			'zh-CHS': decodeURIComponent('%E5%85%83%E4%BB%B6%E7%AC%A6%E5%8F%B7%20%7C%20PCB%20%E5%B0%81%E8%A3%85%E5%9B%BE%20%7C%203D%E6%A8%A1%E5%9E%8B'),
+			//'zh-CHT': 'å…ƒä»¶ç¬¦è™Ÿ | PCBå…ƒä»¶è¼ªå»“åœ–| 3Dæ¨¡åž‹',
+			'zh-CHT':decodeURIComponent('%E5%85%83%E4%BB%B6%E7%AC%A6%E8%99%9F%20%7C%20PCB%E5%85%83%E4%BB%B6%E8%BC%AA%E5%BB%93%E5%9C%96%7C%203D%E6%A8%A1%E5%9E%8B'),
+			'pl-PL' : 'Symbol | Rozmiar | Modele 3D',
+			'fil-PH': 'Symbol | Footprint | Mga 3D Model',
+			//'vi-VN' : 'Biá»ƒu tÆ°á»£ng| Báº£n váº½ | mÃ´ hÃ¬nh 3D'
+			'vi-VN' :decodeURIComponent('Bi%E1%BB%83u%20t%C6%B0%E1%BB%A3ng%7C%20B%E1%BA%A3n%20v%E1%BA%BD%20%7C%20m%C3%B4%20h%C3%ACnh%203D')
+		};
+
+
+		mvTitleText.innerHTML = tx[lang];
+		mvTitleText.id = 'mvTitleBarText';
+		mvTitleText.style.float='left';
+		mvTitleText.style.marginLeft='20px';
+		// mvTitleText.style.fontWeight='500';
+        mvTitleText.style.color = '#2E2E2E';
+        mvTitleText.style.fontSize ='11pt';
+		mvTitleBar.appendChild(mvTitleText);
+
+	
+
+		// The close box
+		// var mvTitleCloseBox = document.createElement('div');
+		// // mvTitleCloseBox.innerHTML = 'X';
+		// mvTitleCloseBox.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+		// mvTitleCloseBox.style.float='right';
+		// mvTitleCloseBox.style.cursor='pointer';
+		// mvTitleCloseBox.style.marginRight='20px';
+		// mvTitleCloseBox.style.fontSize='1.3em';
+		// mvTitleCloseBox.onclick = closeMultiViewDiv;
+        // mvTitleCloseBox.id = 'mvCloseBox';
+		// mvTitleBar.appendChild(mvTitleCloseBox);
+
+			// The back button
+		// var mvTitleBackBox = document.createElement('div');
+		// // mvTitleBackBox.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+		// mvTitleBackBox.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Arrow Back</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>';
+		// mvTitleBackBox.style.float='right';
+		// mvTitleBackBox.style.cursor='pointer';
+		// mvTitleBackBox.style.marginRight='20px';
+		// mvTitleBackBox.style.fontSize='1.3em';
+		// mvTitleBackBox.onclick = mvBack;
+        // mvTitleBackBox.id = 'mvBackButton';
+		// mvTitleBar.appendChild(mvTitleBackBox);
+
+
+		// The close box
+		// var mvTitleCloseBox = document.createElement('div');
+		// mvTitleCloseBox.style.float='right';
+		// mvTitleCloseBox.style.cursor='pointer';
+		// mvTitleCloseBox.style.marginRight='20px';
+		// mvTitleCloseBox.onclick = closeMultiViewDiv
+		// mvTitleCloseBox.id = 'mvCloseBox';
+		// var mvCloseIcon = document.createElement('img');
+		// if (location.origin=="https://testing.componentsearchengine.com") mvCloseIcon.src = 'https://testing.componentsearchengine.com/graphics/close-outline.svg';
+		// else mvCloseIcon.src = 'https://' + branding + 'componentsearchengine.com/graphics/close-outline.svg';
+		// mvCloseIcon.style.height = '25px';
+		// mvTitleBar.appendChild(mvTitleCloseBox);
+
+		var mvTitleCloseBox = document.createElement('div');
+		mvTitleCloseBox.style.float='right';
+		mvTitleCloseBox.style.cursor='pointer';
+		mvTitleCloseBox.style.marginRight='20px';
+		mvTitleCloseBox.onclick = closeMultiViewDiv;
+        mvTitleCloseBox.id = 'mvCloseBox';
+		mvTitleBar.appendChild(mvTitleCloseBox);
+		var mvCloseIcon = document.createElement('img');
+		if (location.origin=="https://testing.componentsearchengine.com") mvCloseIcon.src = 'https://testing.componentsearchengine.com/graphics/xmark-solid.svg';
+		else mvCloseIcon.src = 'https://' + branding + 'componentsearchengine.com/graphics/xmark-solid.svg';
+		mvCloseIcon.style.height = '20px';
+		mvTitleCloseBox.appendChild(mvCloseIcon);
+
+	
+	
+		var mvTitleBackBox = document.createElement('div');
+		mvTitleBackBox.style.float='right';
+		mvTitleBackBox.style.cursor='pointer';
+		mvTitleBackBox.style.marginRight='30px';
+		mvTitleBackBox.onclick = mvBack;
+        mvTitleBackBox.id = 'mvBackButton';
+		mvTitleBar.appendChild(mvTitleBackBox);
+		var mvBackIcon = document.createElement('img');
+		if (location.origin=="https://testing.componentsearchengine.com") mvBackIcon.src = 'https://testing.componentsearchengine.com/graphics/arrow-left-solid.svg';
+		else mvBackIcon.src = 'https://' + branding + 'componentsearchengine.com/graphics/arrow-left-solid.svg';
+		mvBackIcon.style.height = '20px';
+		mvTitleBackBox.appendChild(mvBackIcon);
+
+		// Finally the active area we will give over to the ECAD model display
+		mvActiveArea = document.createElement('iframe');
+		mvActiveArea.id = 'mvActiveArea';
+		mvActiveArea.type = 'text/html';
+		mvActiveArea.style.width='100%';
+		mvActiveArea.style.border = 'none';
+		//mvActiveArea.sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-forms allow-modals";
+		mvOverlayDiv.appendChild(mvActiveArea);
+		document.body.appendChild(mvBackdrop);
+		backdropResized();
+
+		if (mvSandbox) {
+			mvActiveArea.sandbox.add("allow-scripts");
+			mvActiveArea.sandbox.add("allow-same-origin");
+			mvActiveArea.sandbox.add("allow-forms");
+			mvActiveArea.sandbox.add("allow-popups");
+			mvActiveArea.sandbox.add("allow-downloads");
+		}
+
+        window.addEventListener('popstate', mvPopState);
+    }
+
+    var baseURL;
+	if (testing === 1) baseURL = 'https://testing.componentsearchengine.com/entry_u.php';
+	else if (testing === 2) baseURL = 'https://devjs.local/entry_u.php';
+	else if (testing === 3) baseURL = 'https://search3.qa.supplyframe.com/entry_u.php';
+	else baseURL = 'https://' + branding + 'componentsearchengine.com/entry_u_newDesign.php';
+	
+	var comboClause = showComboArea ? '&cmb=1' : '';
+	if (datasheetURL.length>0) datasheetClause = '&d=' + encodeURIComponent(datasheetURL);
+	else datasheetClause = '';
+
+	
+	console.log("The branding is " + branding);
+	console.log("The baseURL is " +  baseURL);
+	console.log("The web root is " +location.origin);
+	//Using the javascript in testing server
+	if (location.origin=="https://testing.componentsearchengine.com") {
+		mvActiveArea.src = 'https://testing.componentsearchengine.com/entry_u_newDesign.php'+ '?mna='+encodeURIComponent(manufacturer)+'&mpn='+encodeURIComponent(partNumber)+partnerClause+'&vrq=multi'+'&fmt='+format+o3Clause+comboClause+logoClause+langClause+pnMatchClause+datasheetClause+mnMatchClause;
+	}else{
+		//if branding exists, it directs to the g sever. (st.comcomponentsearchengine.com is actually in g server)
+		mvActiveArea.src = baseURL + '?mna='+encodeURIComponent(manufacturer)+'&mpn='+encodeURIComponent(partNumber)+partnerClause+'&vrq=multi'+'&fmt='+format+o3Clause+comboClause+logoClause+langClause+pnMatchClause+datasheetClause+mnMatchClause;
+		}
+
+	console.log(mvActiveArea.src);
+	window.history.pushState('MultiView First Shown','MultiView');
+}
+
+function mvPopState(event) {
+    if ( event.state ) {
+    	if (event.state == 'MultiView First Shown') closeMultiViewDiv();
+    }
+}
+
+function mvBack() {
+
+	// window.history.back();
+
+	console.log(window.history.state);
+	if(window.history.state=='MultiView First Shown'){
+		console.log('window.history is MultiView First Show!');
+		window.history.back();
+	}
+
+	
+	if(window.history.state==null){
+		console.log('window.history is null!');
+		window.history.back();
+		// closeMultiViewDiv();
+	}
+	
+
+}
+
+// Called by a click on the close box. We delete all the content we created. 
+function closeMultiViewDiv(e) {
+	var mvDiv = document.getElementById("mvBackdrop");
+	if (mvDiv !== null) mvDiv.parentNode.removeChild(mvDiv);
+    window.removeEventListener("resize", backdropResized);
+    window.removeEventListener("popstate", mvPopState);
+    if (typeof(breMainAreaResized) !== 'undefined') window.removeEventListener("resize", breMainAreaResized);
+
+}
+
+function mvNoAction(e) {
+	e.stopPropagation();
+}
+
+// Resize the multiview to be a sensible proportion of the parent page
+function backdropResized(e) {
+	var bd = document.getElementById('mvBackdrop');
+	var availableWidth = bd.clientWidth*0.9; 		// 5% margin both sides
+	var newWidth = Math.min(availableWidth,852);	// Only need 852 pixels, dont go wider than this
+	var mod = document.getElementById('mvOverlayDiv');
+	var maa = document.getElementById('mvActiveArea');
+	mod.style.width = newWidth+'px';
+	//orignal
+	// var nominalHeight = mod.showComboArea ? 740 : 550;
+	//New Design
+	if (window.matchMedia('screen and (max-width: 900px)').matches) {
+		// if (window.matchMedia('screen and (max-width: 840px)').matches) {
+	// var nominalHeight = mod.showComboArea ? 740 : screen.height-0.1*screen.height;
+	var nominalHeight = mod.showComboArea ? 740 : 650;	
+	}else{
+			var nominalHeight = mod.showComboArea ? 740 : 550;
+		}
+
+
+	var height = Math.min(window.innerHeight*0.95-10,nominalHeight);
+	// original
+	// mod.style.height = height + 'px';
+
+	// maa.style.height = (height-50) + 'px'; //500
+	//New Design
+	if (window.matchMedia('screen and (max-width: 900px)').matches) {
+		// if (window.matchMedia('screen and (max-width: 840px)').matches) {
+		maa.style.height = (height-50) + 'px'; //500
+		mod.style.height = height + 'px';
+	}else{
+		// maa.style.height = (height-50) + 'px';
+		maa.style.height = (nominalHeight-50) + 'px';
+		mod.style.height = nominalHeight + 'px';
+	}
+
+	maa.style.overflowY = 'hidden';
+
+	titleBarVis = newWidth > 350 ? 'block' : 'none';
+	titleBarFont = newWidth > 400 ? '11pt':'9pt';
+	document.getElementById('mvTitleBarText').style.display = titleBarVis;
+	document.getElementById('mvTitleBarText').style.fontSize = titleBarFont;
+
+}
+
+// Not using Array.prototype.includes since this is one of the few files on our site that requires IE support
+function in_array(needle, haystack) {
+    for(var i in haystack) {
+        if(haystack[i] == needle) return true;
+    }
+    return false;
+}
+
+// sanitise a string for use as a literal in quotes in javascript
+function mvEscapeQuotes(instring) {
+    return instring.replace("'","\\x27").replace('"','\\x22');
+}
+
+/* 
+This helper function builds the HTML source code to call the Multiview on the specified partNumber by the specified manufacturer
+usageMode is one of full if partNumber is a full orderable part number, or family if partNumber is a part family prefix
+useLabels = 0 to show just a square icon, or 1 to show the icon and text saying what the icon offers (recommended)
+lang should be one of the following in quotes: en-US,en-GB,cs-CZ,es-ES,es-MX,fr-FR,de-DE,it-IT,ja-JP,ko-KR,nl-NL,pt,ru-RU,sv-SE,th-TH,zh-CHS,zh-CHT,pl-PL,fil-PH,vi-VN
+show3D = 1 to lookup and add an extra 3D status icon when we have 3D for the part. This adds information but results in the icon width being variable - your web layout constraints may dictate your choice. 
+branding is the prefix of your branded site. Supply '' here if you do not have one. 
+flow should be one of 'zip' to let the users download CAD data directly (recommended) or 'epw' to let the users download token files that must be exchanged for real CAD data using the Library Loader application. 
+datasheetURl is the URL where the datasheet can be obtained for this part. Its optional and used only in the event that the part is not released and needs to be requested. The request page is then prepopulated with this value. 
+*/
+function genMultiviewMarkup(manufacturer, partNumber, usageMode, useLabels, labelColour, lang, show3D, branding, flow, backgroundDimming, statusFilter, datasheetURL, only3D) {
+    // some defaults
+    if (useLabels === undefined) useLabels = 1;
+	if (labelColour === undefined) labelColour = '000000';
+    if (show3D === undefined) show3D = 0;
+    if (lang === undefined) lang = 'en-GB';
+    if (branding === undefined) branding = '';
+    if (flow === undefined) flow = 'zip';
+    if (usageMode === undefined) usageMode = 'full';
+    if (backgroundDimming === undefined) backgroundDimming = 1;
+	if (statusFilter === undefined) statusFilter = 0;
+	if (datasheetURL === undefined) datasheetURL = '';
+	if (only3D === undefined) only3D = 0; //initialized by 0, Ron
+
+    var epm = usageMode == 'family' ? 0 : 1;
+
+	if (typeof(mvTestMode) == 'undefined') mvTestMode = 0;	// global used in development, 0 for production
+
+    var src = "<a href=\"javascript:loadPartDiv('" + mvEscapeQuotes(manufacturer) + "','" + mvEscapeQuotes(partNumber) + "','" + branding + "'," + backgroundDimming + ",'" + flow + "'," + mvTestMode + ",'','" + lang + "'," + epm + ",'" + mvEscapeQuotes(datasheetURL) + "'," + only3D + ")\">\n";
+    src += '<img src="';
+
+	if (branding == 'Bloggs Bits' || branding == 'testing.componentsearchengine.com') virtualHost = 'testing.componentsearchengine.com';	// Testing
+	else if (branding.length == 0) virtualHost = 'componentsearchengine.com';
+	else virtualHost = branding+'.componentsearchengine.com';
+
+    src += 'https://' + virtualHost + '/icon.php?mna=' +  encodeURIComponent(manufacturer) + '&mpn=' + encodeURIComponent(partNumber);
+    if (useLabels) {
+        src += '&lbl=1';
+		src += '&lbc=' + labelColour;
+        if (lang != 'en-GB') src += '&lang=' + lang;
+    }
+    if (show3D) src += '&q3=1';
+    if (usageMode == 'family') src+= '&epm=0';
+
+	if (statusFilter > 0) src += '&conf=' + statusFilter;
+
+	if (only3D) src += '&o3=1'; //If only3D is defined, show 1, Ron
+
+    src += '">';
+
+    src += "\n</a>";
+
+    return src;
+}
+
+// Experimental - not used in production yet
+function insertMultiviewInstance(manufacturer, partNumber, usageMode, useLabels, lang, show3D, branding, flow, backgroundDimming, statusFilter) {
+    var src = genMultiviewMarkup(manufacturer, partNumber, usageMode, useLabels, lang, show3D, branding, flow, backgroundDimming, statusFilter);
+
+    var scripts= document.getElementsByTagName('script');
+    var this_script= scripts[scripts.length-1];
+    var anchor = document.createElement('div');
+	anchor.style.display='inline-block';
+    this_script.parentNode.insertBefore(anchor,this_script);
+    anchor.innerHTML = src;
+}

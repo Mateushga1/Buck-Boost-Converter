@@ -1,0 +1,34 @@
+LTspice 24.1.1 for Windows
+Circuit: C:\Users\Mateus\OneDrive\Documentos\8.Projet Portolan\Simulations\FB_Control\FB_Control.net
+Start Time: Mon Feb 24 23:07:13 2025
+solver = Normal
+Maximum thread count: 8
+tnom = 27
+temp = 27
+method = trap
+Instance "u2:m1": Length shorter than recommended for a level 1 MOSFET.
+Instance "u2:m2": Length shorter than recommended for a level 1 MOSFET.
+Instance "u2:m16": Length shorter than recommended for a level 1 MOSFET.
+Instance "u2:m3": Length shorter than recommended for a level 1 MOSFET.
+Instance "u2:m4": Length shorter than recommended for a level 1 MOSFET.
+Instance "u2:m15": Length shorter than recommended for a level 1 MOSFET.
+Instance "u5:m1": Length shorter than recommended for a level 1 MOSFET.
+Instance "u5:m2": Length shorter than recommended for a level 1 MOSFET.
+Instance "u5:m16": Length shorter than recommended for a level 1 MOSFET.
+Instance "u5:m3": Length shorter than recommended for a level 1 MOSFET.
+Instance "u5:m4": Length shorter than recommended for a level 1 MOSFET.
+Instance "u5:m15": Length shorter than recommended for a level 1 MOSFET.
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 38.018 seconds.
+
+Simulation Failed: 
+
+Total elapsed time: 38.018 seconds.
+
+Files loaded:
+C:\Users\Mateus\OneDrive\Documentos\8.Projet Portolan\Simulations\FB_Control\FB_Control.net
+C:\Users\Mateus\AppData\Local\LTspice\lib\cmp\standard.bjt
+C:\Users\Mateus\AppData\Local\LTspice\lib\sub\ad8531.cir
+C:\Users\Mateus\AppData\Local\LTspice\lib\sub\ADR5045.sub
+C:\Users\Mateus\AppData\Local\LTspice\lib\sub\LTC6992-1.sub
+
